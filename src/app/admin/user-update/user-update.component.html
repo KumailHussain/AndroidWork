@@ -1,0 +1,24 @@
+<div class="container">
+    <a class="anchor" [routerLink]="['/admin/home']">Go back</a>
+  <h2 class="heading">Edit User Information</h2>
+  <form #f="ngForm" (ngSubmit)="update(f.value)">
+    <div class="form-group">
+      <label>First Name</label>
+      <input type="text" name="firstName" class="form-control" [(ngModel)]="selectedUser.firstName">
+    </div>
+    <div class="form-group">
+        <label>Last Name</label>
+      <input type="text" name="lastName" class="form-control" [(ngModel)]="selectedUser.lastName">
+    </div>
+     <div class="form-group">
+        <label>Email Address</label>
+      <input type="email" name="emailAddress" class="form-control" [(ngModel)]="selectedUser.emailAddress">
+    </div>
+    <div class="form-group">
+        <label>Phone Number</label>
+      <input type="number" name="phoneNumber" class="form-control" [(ngModel)]="selectedUser.phoneNumber">
+    </div>
+    <button type="submit" class="btn btn-primary">Update</button>
+    <span [hidden]="!isUpdating">User updated successfully.</span>
+  </form>
+</div>

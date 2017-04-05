@@ -1,0 +1,103 @@
+<div class="container">
+    <div style="padding-top:50px;"> </div>
+    <div class="panel panel-default panel-custom"  *ngIf="validateInstituion==true">
+        <div class="panel-body">
+                <span>
+                    <h1 class="panel-title pull-left" style="font-size:30px;">{{profileInfo.institutionName}} <small>{{profileInfo.institutionUrl}}</small></h1>
+                    <div class="dropdown pull-right">
+                        <a [routerLink]="['/edit-institution']">
+                            <button class="btn btn-success button-s" type="button" id="dropdownMenu1" aria-haspopup="true" aria-expanded="true">
+                                Edit Insitution
+                            </button>
+                        </a>
+                    </div>
+                </span><br><br><hr>
+            <p><span class="ins-details">Industry Type: </span>
+                <span class="ins-details">{{profileInfo.industryType}}</span></p>
+            <p><span class="ins-details">City Name: </span>
+                <span class="ins-details">{{profileInfo.cityName}}</span></p>
+            <p><span class="ins-details">Address: </span>
+                <span class="ins-details">{{profileInfo.institutionAddress}}</span></p>
+            <hr>
+            <span class="des">
+                <p class="des" style="font-size:20px">Description: </p>
+                <p>{{profileInfo.institutionDescription}}</p></span>
+        </div>
+    </div>
+    <hr>
+    <div class="panel panel-default panel-custom" *ngIf="profileInfo">
+        <div class="panel-body">
+                <span>
+                    <h2 class="pull-left"><strong>Posted Jobs</strong></h2>
+                </span>
+            <br><br>
+            <br><hr>
+            <div   *ngIf="validatePostedJob==true">
+                <div *ngFor="let job of jobs">
+                    <div class="col-md-12" *ngIf="job.jobStatus==true">
+                        <div class="panel panel-default panel-custom">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <button class="btn btn-success button-d pull-right" type="button" (click)="deletejob(job)" aria-haspopup="true" aria-expanded="true"><b>Delete </b><i class="fa fa-trash-o fa-fw"></i></button>
+                                    <div class="col-xs-9 text-left" >
+                                        <div title="Title"class="heading-job" >{{job.jobTitle}}</div>
+                                        <div title="Instituion Name" class="job-company">{{job.institutionName}}</div>
+                                        <div title="Description" class="job-details">{{job.jobDescription}}</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel-footer job">
+                                <span class="glyphicon glyphicon-calendar " aria-hidden="true"> </span>
+                                <span title="Deadline" class = "panel-footer-custom">{{job.deadline | date: 'dd/MM/yyyy'}}</span>
+                                <span class="glyphicon glyphicon-stats" aria-hidden="true"> </span>
+                                <span title="Experience" class = "panel-footer-custom">{{job.jobExperience}}</span>
+                                <span class="glyphicon glyphicon-map-marker" aria-hidden="true"> </span>
+                                <span title="Location" class = "panel-footer-custom">{{job.jobLocation}}</span>
+                                <label class="panel-footer-custom custom-color pull-right" > <span class="fa fa-check-circle custom-color-highlight"></span> <b>Approved </b></label>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                   <div *ngFor="let job of jobs">
+                         <div class="col-md-12" *ngIf="job.jobStatus==false" >
+                           <div class="panel panel-default panel-custom">
+                                <div class="panel-heading">
+                                    <div class="row">
+                                        <button class="btn btn-success button-d pull-right" type="button" (click)="deletejob(job)"  aria-haspopup="true" aria-expanded="true"><b>Delete </b><i class="fa fa-trash-o fa-fw"></i></button>
+                                        <div class="col-xs-9 text-left" >
+                                            <div class="heading-job" >{{job.jobTitle}}</div>
+                                            <div class="job-company">{{job.institutionName}}</div>
+                                            <div class="job-details">{{job.jobDescription}}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel-footer job">
+                                    <span class="glyphicon glyphicon-calendar " aria-hidden="true"> </span>
+                                    <span class = "panel-footer-custom">{{job.deadline | date: 'dd/MM/yyyy'}}</span>
+                                    <span class="glyphicon glyphicon-stats" aria-hidden="true"> </span>
+                                    <span class = "panel-footer-custom">{{job.jobExperience}}</span>
+                                    <span class="glyphicon glyphicon-map-marker" aria-hidden="true"> </span>
+                                    <span class = "panel-footer-custom">{{job.jobLocation}}</span>
+                                    <label class="panel-footer-custom custom-color pull-right" > <span class="fa fa-exclamation-circle"></span> <b>Needs Approval </b></label>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="validatePostedJob==false">
+                <div class="alert alert-info">
+                    No Job Posted Yet, Click here to <a [routerLink]="['/post-job']">Post job</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-danger panel-custom" *ngIf="validateInstituion==false">
+        <div class="panel-heading">
+            Sorry you don't have any institutions yet. Click here to <a [routerLink]="['/add-institution']">Add Institution</a>
+        </div>
+    </div>
+</div>

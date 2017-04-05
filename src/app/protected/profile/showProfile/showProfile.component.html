@@ -1,0 +1,161 @@
+<div class="mainbody container-fluid wrapper">
+    <div class="row">
+        <div style="padding-top:50px;"> </div>
+        <div class="col-lg-3 col-md-3 hidden-sm hidden-xs">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="media">
+                        <div align="center">
+                            <img class="thumbnail img-responsive" src={{fileUrl2}} width="300px" height="300px">
+                        </div>
+
+                        <div class="text-center"  >
+                            <div *ngIf="fileUrl!=null">
+                                <a  class="avatar img-thumbnail"  target="_blank" href={{fileUrl}} >My Resume.{{fileUrl.substr(fileUrl.indexOf(".") + 1)}}</a>
+                                <h6 *ngIf="disableEditing==false" >Upload a different Resume...</h6>
+                                <input #input style="display: none;" accept="application/vnd.openxmlformats-officedocument.wordprocessingml.document,
+                               application/pdf,application/msword,application"
+                                       [ng-file-select]="options"
+                                       (onUpload)="handleUpload($event)"
+                                       (beforeUpload)="beforeUpload($event)"
+                                       (onFileUploadFinish)="imageUploaded($event)"
+
+                                       type="file" class="text-center center-block well well-sm">
+                                <button *ngIf="disableEditing==false" class="btn btn-success" (click)="input.click()">Upload Resume</button>
+                            </div>
+                            <div *ngIf="fileUrl==null">
+
+                                <label  *ngIf="disableEditing==false" class="avatar img-thumbnail"  >No Resume Attached</label>
+                                <input  #input2 [ng-file-select]="options"
+                                        style="display: none;" accept="application/vnd.openxmlformats-officedocument.wordprocessingml.document,
+                               application/pdf,application/msword,application"
+                                        (onUpload)="handleUpload($event)" type="file" class="text-center center-block well well-sm">
+                                <button *ngIf="disableEditing==false"  class="btn btn-success" (click)="input2.click()">Upload Resume</button>
+                            </div>
+                        </div>
+
+                        <div class="media-body">
+                            <h3><strong>Location</strong></h3>
+                            <p>{{user.location}}</p>
+                            <hr>
+                            <h3><strong>Gender</strong></h3>
+                            <p>{{user.gender}}</p>
+                            <hr>
+                            <h3><strong>Birthday</strong></h3>
+                            <p>{{user.dateOfBirth | date: 'dd/MM/yyyy'}}</p>
+                            <hr>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <span>
+                        <h1 class="panel-title pull-left" style="font-size:30px;">{{user.firstName}}&nbsp;{{user.lastName}} </h1>
+                        <div class="dropdown pull-right">
+
+                        <a [routerLink]="['/edit-profile']">
+                            <button *ngIf="disableEditing==false"  class="btn btn-success border-custom button-s" type="button" id="dropdownMenu1" aria-haspopup="true" aria-expanded="true">
+                                Edit Profile
+                            </button>
+                            </a>
+                        </div>
+                    </span>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <hr>
+                    <span class="pull-left">
+                    <span class="glyphicon glyphicon-envelope" style="color:#3fb618;margin-left:5px;width:25px;height:20px" aria-hidden="true"> </span>
+                        <h1  class="panel-title pull-left"  style="font-size:30px;"><small>{{user.emailAddress}}</small> </h1>
+                    </span>
+                    <span class="pull-right">
+                    <span class="glyphicon glyphicon-earphone" style="color:#3fb618;padding-right:10px;width:20;height:20" aria-hidden="true"> </span>
+                    <span>
+                    <h1 class="panel-title pull-left" style="font-size:30px;"><small>{{user.phoneNumber}}</small></h1>
+                    </span>
+                    </span>
+                </div>
+            </div>
+            <hr>
+
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <span>
+                        <h2 class="pull-left"><a href="#" style="text-decoration:none;"><strong>Skills</strong></a></h2>
+                        <div class="pull-right">
+                        </div>
+                    </span>
+                    <span>
+                        <div class="dropdown pull-right">
+                        <button *ngIf="disableEditing==false" (click)="addSkillRow()" class="btn btn-success" style="margin-right: 10px" type="button" id="addrow" aria-haspopup="true" aria-expanded="true">
+                                Add Skill
+                            </button>
+                        </div>
+                    </span>
+                    <br>
+                    <br>
+
+                    <br><hr>
+                    <div class="row" >
+                        <div class="col-md-4 pull-left" *ngFor="let data of cvData.skill">
+                            <div class="panel panel-default skill-panel-custom">{{data}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel panel-default" *ngIf="row==true">
+                <div class="panel-body" >
+                    <span>
+                       <input class="pull-left" type="text" name="skill"[(ngModel)]="editdata.skill" >
+                        <div class="col-md-6 pull-left">
+                             <button *ngIf="disableEditing==false"  (click)="addSkill()" class="btn btn-primary"  style="margin-right: 10px" type="button" id="addSkill" aria-haspopup="true" aria-expanded="true">
+                              Add
+                              </button>
+                         </div>
+                    </span>
+                </div>
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <span>
+                        <h2 class="pull-left"><a href="#" style="text-decoration:none;"><strong>Experience</strong></a></h2>
+                        <div class="pull-right">
+                        </div>
+                    </span>
+                    <span>
+                        <div class="dropdown pull-right">
+                        <button *ngIf="disableEditing==false" (click)="addExpRow()" class="btn btn-success" style="margin-right: 10px" type="button" id="addexp" aria-haspopup="true" aria-expanded="true">
+                                Add Experience
+                            </button>
+                        </div>
+                    </span>
+                    <br>
+                    <div class="row" *ngFor="let exp of cvData.experience">
+                        <br>
+                        <br><hr><div class="exp-panel-custom">{{exp}}</div>
+                        <br>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default" *ngIf="row2==true">
+                <div class="panel-body" >
+                        <span>
+                            <input  size="80px" class="pull-left" type="text" name="experience" [(ngModel)]="editdata.experience" >
+                                <div class="col-md-2 pull-left">
+                                    <button (click)="addExp()" class="btn btn-primary" type="button" id="addexpe" aria-haspopup="true" aria-expanded="true">
+                                     Add
+                                     </button>
+                                </div>
+                        </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

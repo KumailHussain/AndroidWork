@@ -1,0 +1,76 @@
+
+<div class="container">
+  <h1 class="title heading-custom">Find Jobs</h1>
+  <hr>
+  <div class= "col.-md-12">
+    <div class="col-md-2 padding-custom">
+      <select (ngModelChange)="onlocationChange($event)"  [(ngModel)]="selectedWorkout3" aria-describedby="sizing-addon1" class="select-custom">
+        <option [attr.value]="selectedWorkout3" [disabled]="selectedWorkout3">Select City</option>
+        <option value="Bangalore">Bangalore</option>
+        <option value="Chennai">Chennai</option>
+      </select>
+    </div>
+    <div class="col-md-2 padding-custom">
+      <select  (ngModelChange)="onPlaceChange($event)"  [(ngModel)]="selectedWorkout1" aria-describedby="sizing-addon1" class="select-custom">
+        <option [attr.value]="selectedWorkout1" [disabled]="selectedWorkout1">Select Place</option>
+        <option value="KR Puram">KR Puram</option>
+        <option value="Electronic City">Electronic City</option>
+        <option value="Rajaji Nagar">Rajaji Nagar</option>
+        <option value="Hebbal">Hebbal</option>
+        <option value="JP Nagar">JP Nagar</option>
+        <option value="Jaya Nagar">Jaya Nagar</option>
+        <option value="Egmore">Egmore</option>
+        <option value="Thambaram">Thambaram</option>
+        <option value="Mylapore">Mylapore</option>
+        <option value="Kodambakkam">Kodambakkamr</option>
+        <option value="Anna Nagar">Anna Nagar</option>
+      </select>
+    </div>
+    <div class="col-md-2 padding-custom">
+      <select  (ngModelChange)="onIndustryChange($event)"  [(ngModel)]="selectedWorkout2" aria-describedby="sizing-addon1" class="select-custom">
+        <option [attr.value]="selectedWorkout2" [disabled]="selectedWorkout2">Select Industry</option>
+        <option value="IT">IT</option>
+        <option value="Business">Business</option>
+        <option value="Engineering">Engineering</option>
+        <option value="Teaching">Teaching</option>
+        <option value="Marketing">Marketing</option>
+      </select>
+    </div>
+    <div class="col-md-2 padding-custom">
+      <button (click)="searchJobs()" [disabled]="selectedWorkout1=== 'place' || selectedWorkout2=== 'industry' || selectedWorkout3=== 'city'"  type="submit" class="btn btn-primary  login-button border-radius" > <i class="fa fa-search custom-search"></i>Search Jobs</button>
+    </div>
+    <div class="col-md-12" *ngIf="jobExist==false">
+      <div class="panel panel-danger panel-custom">
+        <div class="panel-heading text-center">
+          Sorry no job found!
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngFor="let job of findjob">
+   <a [routerLink]="['/apply-job',{id:job._id}]">
+      <div class="col-md-12" >
+        <div class="panel panel-default panel-custom">
+          <div class="panel-heading">
+            <div class="row">
+              <div class="col-xs-9 text-left" >
+                <div title="Title" class="heading-job" >{{job.jobTitle}}</div>
+                <div title="Description" class="job-details">{{job.jobDescription}}</div>
+              </div>
+            </div>
+          </div >
+          <div class="panel-footer ">
+            <span class="glyphicon glyphicon-calendar " aria-hidden="true"> </span>
+            <span title="Deadline" class = "panel-footer-custom">{{job.deadline | date: 'dd/MM/yyyy'}}</span>
+            <span class="glyphicon glyphicon-stats" aria-hidden="true"> </span>
+            <span title="Experience" class = "panel-footer-custom">{{job.jobExperience}}</span>
+            <span class="glyphicon glyphicon-map-marker" aria-hidden="true"> </span>
+            <span title="Location" class = "panel-footer-custom">{{job.jobLocation}}</span>
+            <span class="pull-right"><b>Apply </b><i class="fa fa-arrow-circle-right"></i></span>
+            <div class="clearfix"></div>
+          </div>
+        </div>
+      </div>
+    </a>
+    </div>
+</div>

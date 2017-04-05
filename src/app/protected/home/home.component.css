@@ -1,0 +1,116 @@
+.huge {
+    font-size: 40px;
+}
+
+.panel-green {
+    border-color: #5cb85c;
+}
+
+.panel-green > .panel-heading {
+    border-color: #5cb85c;
+    color: #fff;
+    background-color: #5cb85c;
+}
+
+.panel-green > a {
+    color: #5cb85c;
+}
+
+.panel-green > a:hover {
+    color: #3d8b3d;
+}
+
+.panel-red {
+    border-color: #d9534f;
+}
+
+.panel-red > .panel-heading {
+    border-color: #d9534f;
+    color: #fff;
+    background-color: #d9534f;
+}
+
+.panel-red > a {
+    color: #d9534f;
+}
+
+.panel-red > a:hover {
+    color: #b52b27;
+}
+
+.panel-yellow {
+    border-color: #f0ad4e;
+}
+
+.panel-yellow > .panel-heading {
+    border-color: #f0ad4e;
+    color: #fff;
+    background-color: #f0ad4e;
+}
+
+.panel-yellow > a {
+    color: #f0ad4e;
+}
+
+.panel-yellow > a:hover {
+    color: #df8a13;
+}
+
+.heading-job{
+    color:blue;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.job-company{
+    color:#777675;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.job-details{
+    color: #979696;
+    font-size: 12px;
+    padding-top: 10px;
+}
+
+.panel-footer-custom{
+    color:#737171;
+    font-family: Arial;
+    font-color:black;
+    font-weight: bold;
+    padding-left: 5px;
+    padding-right: 20px;
+}
+
+.panel-institution{
+    color:#02A8B6;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.related-company{
+    color:#02A3B6;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.city-sidebar{
+    color:#31708f;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+li{
+    color: rgba(13, 36, 103, 0.85);
+    font-size: 15px;
+    font-weight: 600;
+}
+
+#details { font-family: "Quicksand", sans-serif; font-size: 60px; }
+#home-box > h2 { font-family: "Quicksand", sans-serif; font-weight: 400; line-height: 1.1; color: #75b1ae; }
+.price { font-size: 25px; float: left; }
+.pricing_header { background: none repeat scroll 0% 0% rgb(44, 62, 80); border-radius: 4px 4px 0px 0px; transition: background 0.4s ease-out 0s; }
+.pricing_header h3 { text-align:center; line-height: 20px; padding: 10px 0px; margin: 0px; font-family: "Quicksand", sans-serif; font-weight: 400; color: #75b1ae; }
+.list-group-item:first-child { border-top-right-radius: 0px; border-top-left-radius: 0px; }
+.space {height: 2px; background-color: #75b1ae;}

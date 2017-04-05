@@ -1,0 +1,75 @@
+<div class="form" xmlns="http://www.w3.org/1999/html">
+  <h1>Sign up</h1>
+  <form #f="ngForm" (ngSubmit)="register(f.value)">
+    <div class="top-row">
+      <div class="field-wrap">
+        <label [hidden]="user.firstName">
+          First Name
+        </label>
+        <input type="text" name="firstName" required autocomplete="off" [(ngModel)]="user.firstName" />
+      </div>
+
+      <div class="field-wrap">
+        <label [hidden]="user.lastName">
+          Last Name
+        </label>
+        <input type="text" name="lastName" required autocomplete="off" [(ngModel)]="user.lastName" />
+      </div>
+
+    </div>
+
+    <div class="field-wrap">
+      <label [hidden]="user.emailAddress">
+        Email Address
+      </label>
+      <input type="email" required autocomplete="off" name="emailAddress" [(ngModel)]="user.emailAddress" />
+    </div>
+
+    <div class="field-wrap">
+      <label [hidden]="user.password">
+        Set A Password
+      </label>
+      <input type="password" required autocomplete="off" name="password" [(ngModel)]="user.password"/>
+    </div>
+
+    <div class="field-wrap">
+
+      <input type="date" required autocomplete="off" name="dateOfBirth" class="b-input"[(ngModel)]="user.dateOfBirth" />
+    </div>
+
+     <div class="field-wrap">
+      <select [(ngModel)]="user.location"  name="location" >
+        <option disabled selected [value]="none"><b> Select Location</b></option>
+        <option value="Bangalore">Bangalore</option>
+        <option value="Chennai">Chennai</option>
+      </select>
+    </div>
+
+    <div class="field-wrap">
+      <select [(ngModel)]="user.gender"  name="gender" >
+        <option disabled selected [value]="gender"> <b>Select Gender</b></option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+      </select>
+    </div>
+
+
+    <div class="field-wrap">
+      <label [hidden]="user.phoneNumber">
+        Phone Number
+      </label>
+      <input type="number" required autocomplete="off" name="phoneNumber" [(ngModel)]="user.phoneNumber" />
+    </div>
+
+
+    <span class="notification" *ngIf="notification">
+                <i class="fa fa-check"><span class="success">{{notification}}</span></i>
+            </span>
+    <span class="alert-danger" *ngIf="notificationExist" >
+                <i class="fa fa-warning"><span class="alert-danger">{{notificationExist}}</span></i>
+            </span>
+    <p class="sign-up"><a [routerLink]="['/signin']">Sign in</a></p>
+    <button type="submit" class="button button-block">Sign up</button>
+
+  </form>
+</div>

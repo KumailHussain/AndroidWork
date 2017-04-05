@@ -1,0 +1,43 @@
+
+.body-custom{
+    margin-top:75px;
+}
+
+.profile-panel{
+    background-color: #C8FFB0
+}
+
+.navbar-inverse {
+    background-color: black;
+    border-color: black;
+}
+.label-custom{
+    margin:20px;
+    size:20px;
+}
+
+.skill-panel-custom{
+    background-color: #ff7f00;
+    border-color: #ff7f00;
+    color:white;
+    text-align: center;
+    font-size:16px;
+}
+
+.exp-panel-custom{
+    background-color: #ff7f00;
+    border-color: #ff7f00;
+    color:white;
+    text-align: left;
+    font-size:14px;
+    margin-left: 20px;
+}
+
+.border-custom{
+    border-radius: 4px;
+}
+
+.button-color{
+    background-color: #0510ff;
+    border-color: #0510ff;
+}

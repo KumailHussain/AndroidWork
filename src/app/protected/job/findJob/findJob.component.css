@@ -1,0 +1,109 @@
+
+.body-custom{
+    margin-top:75px;
+}
+
+.form-custom{
+    margin:10px;
+}
+
+.heading-job{
+    color:blue;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.job-company{
+    color:#777675;
+    font-size: 16px;
+    font-weight: bold;
+    padding-top: 5px;
+}
+
+.job-details-heading{
+    color: #5f5c5b;
+    font-size: 24px;
+    padding-top: 10px;
+
+}
+.job-details{
+    color: #979696;
+    font-size: 12px;
+    padding-top: 10px;
+}
+
+.panel-footer-custom{
+    color:#737171;
+    font-family: Arial;
+    font-color:black;
+    font-weight: bold;
+    padding-left: 5px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom:10px;
+}
+.button-custom{
+    padding-bottom:10px;
+}
+
+.heading-custom{
+    padding-top: 20px;
+    text-align:left;
+}
+.border {
+    border-bottom: 2px solid blue;
+    padding-bottom: 14px;
+}
+
+.padding-custom {
+    padding-top: 15px;
+    padding-bottom: 25px;
+    padding-right: 10px;
+    height: 60px;
+    margin-bottom: 30px;
+    width: 25%;
+}
+
+.select-custom {
+    text-align: center;
+    height: 35px;
+    width: 250px;
+    margin-left: 15px;
+    border-radius: 4px;
+}
+.select-padding{
+    padding: 10px;
+    height: 120px;
+    border-radius: 10px;
+    border-color: black;
+
+}
+.panel-custom{
+    border-radius: 4px;
+    border-width: 2px;
+    margin-left: 0px;
+}
+
+.border-radius{
+    border-radius: 4px;
+    height: 35px;
+    margin-left: 20px;
+}
+.button-s{
+    border-color: #3fb618;
+    background-color: #3fb618;
+}
+.custom-search{
+  margin-right: 5px;
+}
+
+.button-p{
+    background-color: #008BFF;
+    border-color: #008BFF;
+}
+
+.button-p:hover{
+  color: #fff;
+  background-color: #31708f;
+  border-color: #31708f;
+}

@@ -1,0 +1,30 @@
+<h1 class="title heading-custom">Applied Jobs</h1>
+<hr>
+<table class="table" *ngIf="appliedNotification==true">
+  <thead>
+  <tr>
+    <th>Email</th>
+    <th>Job Description</th>
+    <th>Job Title</th>
+    <th>Applied Date</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let job of appliedJobs">
+    <td>{{job.emailAddress}}</td>
+    <td>{{job.description}}</td>
+    <td>{{job.jobTitle}}</td>
+    <td>{{job.applyDate | date: 'dd/MM/yyyy'}}</td>
+    <td ><span class="glyphicon glyphicon-eye-open"></span><a class="custom-color" [routerLink]="['/admin/view-profile', {emailAddress:job.emailAddress}]">View Profile</a></td>
+  </tr>
+  </tbody>
+</table>
+  <div *ngIf="appliedNotification==false">
+  <div class="col-md-9">
+    <div class="panel panel-danger panel-custom">
+      <div class="panel-heading text-center">
+       No user has applied yet.
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,315 @@
+/*
+ * Start Bootstrap - Landing Page (http://startbootstrap.com/)
+ * Copyright 2013-2016 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
+ */
+
+body,
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+}
+
+h3{
+    margin-bottom: 30px;
+}
+
+.topnav {
+    font-size: 14px;
+}
+
+.lead {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.intro-header {
+    padding-top: 50px; /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */
+    padding-bottom: 50px;
+    text-align: center;
+    color: #f8f8f8;
+    background: url(../../../../src/content/img/intro-bg.jpg) no-repeat center center;
+    background-size: cover;
+}
+
+.intro-message {
+    position: relative;
+    padding-top: 20%;
+    padding-bottom: 20%;
+}
+
+.intro-message > h1 {
+    margin: 0;
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+    font-size: 5em;
+}
+
+.intro-divider {
+    width: 400px;
+    border-top: 1px solid #f8f8f8;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
+.intro-message > h3 {
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+}
+
+@media(max-width: 767px) {
+    .intro-message {
+        padding-bottom: 15%;
+    }
+
+    .intro-message > h1 {
+        font-size: 3em;
+    }
+
+    ul.intro-social-buttons > li {
+        display: block;
+        margin-bottom: 20px;
+        padding: 0;
+    }
+
+    ul.intro-social-buttons > li:last-child {
+        margin-bottom: 0;
+    }
+
+    .intro-divider {
+        width: 100%;
+    }
+}
+
+.network-name {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+.content-section-a {
+    padding: 50px 0;
+    background-color: #ffffff;
+}
+
+.content-section-b {
+    padding: 50px 0;
+    border-top: 1px solid #e7e7e7;
+    border-bottom: 1px solid #e7e7e7;
+    background-color: #dbdde2;
+}
+
+.content-section-c {
+    padding: 50px 0;
+    border-top: 1px solid #e7e7e7;
+    border-bottom: 1px solid #e7e7e7;
+    background-color: #d1fb8a;
+}
+
+
+
+.section-heading {
+    margin-bottom: 30px;
+}
+
+.section-heading-spacer {
+    float: left;
+    width: 200px;
+    border-top: 3px solid #e7e7e7;
+}
+
+
+
+.find-job {
+    padding: 150px 0;
+    color: #f8f8f8;
+    background: url(../../../../src/content/img/job.jpg) no-repeat center center;
+    background-size: contain;
+    margin-top: 10px;
+}
+
+
+.find-emp {
+    padding: 150px 0;
+    color: #f8f8f8;
+    background: url(../../../../src/content/img/hire.jpg) no-repeat center center;
+    background-size: contain;
+    margin-top: 10px;
+}
+
+.guest-lec {
+    padding: 150px 0;
+    color: #f8f8f8;
+    background: url(../../../../src/content/img/expert.jpg) no-repeat center center;
+    background-size: contain;
+    margin-top: 10px;
+}
+
+.training {
+    padding: 150px 0;
+    color: #f8f8f8;
+    background: url(../../../../src/content/img/training.jpg) no-repeat center center;
+    background-size: contain;
+    margin-top: 10px;
+}
+
+
+.banner h2 {
+    margin: 0;
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+    font-size: 3em;
+}
+
+.banner ul {
+    margin-bottom: 0;
+}
+
+.banner-social-buttons {
+    float: right;
+    margin-top: 0;
+}
+
+@media(max-width:1199px) {
+    ul.banner-social-buttons {
+        float: left;
+        margin-top: 15px;
+    }
+}
+
+@media(max-width:767px) {
+    .banner h2 {
+        margin: 0;
+        text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+        font-size: 3em;
+    }
+
+    ul.banner-social-buttons > li {
+        display: block;
+        margin-bottom: 20px;
+        padding: 0;
+    }
+
+    ul.banner-social-buttons > li:last-child {
+        margin-bottom: 0;
+    }
+}
+
+footer {
+    padding: 50px 0;
+    background-color: #201a2f;
+}
+
+p.copyright {
+    margin: 15px 0 0;
+}
+
+.button-p {
+    background-color: #008BFF;
+    border-color: #008BFF;
+}
+
+.button-p:hover {
+  color: #fff;
+  background-color: #31708f;
+  border-color: #31708f;
+}
+
+.container-custom {
+      width: 100%;
+    height: 100%;
+  }
+
+  .custom {
+    padding: -40px !important;
+  }
+
+.padding-custom-start {
+    margin-left: 13%;
+}
+
+.select-custom {
+  color: #2c364c;
+}
+
+.testimonials {
+    font-size: 40px;
+    padding-top: 30px;
+    font-weight: 600;
+}
+
+.test-sample {
+    font-size: 24px;
+    padding-bottom: 20px;
+
+}
+.testimonial-des {
+    font-size: 15px;
+    padding: 0px;
+    font-style: italic;
+    color: #797979;
+}
+
+.contact {
+    padding:15px;
+    background-color: #dbdde2;
+}
+
+.contact-heading {
+    font-size: 40px;
+    padding-top: 5px;
+    padding-bottom: 20px;
+    font-weight: 600;
+}
+
+.profile {
+  margin: 0px 0;
+}
+
+.profile-sidebar {
+  padding: 20px 0 10px 0;
+  background: #fff;
+}
+
+.profile-userpic img {
+  float: none;
+  margin: 0 auto;
+  width: 35%;
+  height: 35%;
+  -webkit-border-radius: 50% !important;
+  -moz-border-radius: 50% !important;
+  border-radius: 50% !important;
+}
+
+.profile-usertitle {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.profile-usertitle-name {
+  color: #5a7391;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 7px;
+}
+
+.profile-usertitle-job {
+  color: #5b9bd1;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.message{
+  margin-left: 40%;
+  margin-bottom: 2%;
+  color: #00b200;
+}
