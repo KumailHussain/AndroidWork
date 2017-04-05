@@ -1,0 +1,8 @@
+﻿<div class="app">
+    <nav class="navbar navbar-inverse navbar-fixed-top" style="background-color: #222939;border-color:#222939">
+        <app-header></app-header>
+    </nav>
+    <div [ngClass]="isLoggedIn? 'page-wrapper': 'custom'">
+        <router-outlet></router-outlet>
+    </div>
+</div>

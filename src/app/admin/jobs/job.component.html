@@ -1,0 +1,4 @@
+<h1>Posted Jobs</h1>
+ <app-async [waitFor]="hasFetched">
+        <app-table [data]="jobs" (onEdit)="navigate($event)" (onRemove)="remove($event)" (onView)="view($event)"></app-table>
+</app-async>

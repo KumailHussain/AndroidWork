@@ -1,0 +1,47 @@
+.border {
+    border-bottom: 2px solid blue;
+    padding-bottom: 14px
+}
+
+.heading-custom {
+	padding-top: 20px;
+	text-align: left;
+}
+
+.border-custom {
+	border-radius: 4px;
+}
+
+.select-custom {
+    text-align: center;
+    height: 35px;
+    width: 100%;
+    border-radius: 4px;
+}
+
+.heading-custom {
+    background: white;
+    padding-top: 20px;
+    text-align: left;
+}
+
+.alert{
+    margin-top: 70px;
+}
+
+.position {
+    margin-left: 45%;
+    }
+
+.select-custom{
+    text-align: center;
+    height:33px;
+    width: 100%;
+
+}
+
+.fa{
+    margin-right: 10px;
+    color: #f0ad4e;
+    font-size:20px;
+}

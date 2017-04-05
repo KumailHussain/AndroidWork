@@ -1,0 +1,73 @@
+<div *ngIf="!checkRole">
+    <div class="navbar-header">
+        <a class="navbar-brand title" [routerLink]="['']" *ngIf="!isLoggedIn"><i class="fa fa-gg logo"></i></a>
+        <ul class="nav navbar-left top-nav" *ngIf="!isLoggedIn">
+            <li>
+                <a [routerLink]="['/find-job']">Find Jobs</a>
+            </li>
+        </ul>
+    </div>
+    <div class="navbar-header" *ngIf="isAdmin==false">
+        <a class="navbar-brand title" [routerLink]="['dashboard']" *ngIf="isLoggedIn"><i class="fa fa-gg logo"></i></a>
+    </div>
+    <div *ngIf="isAdmin==true">
+        <a class="navbar-brand title" [routerLink]="['institution']" *ngIf="isLoggedIn"><i
+                class="fa fa-gg logo"></i></a>
+        <ul class="nav navbar-left top-nav" *ngIf="isLoggedIn">
+            <li>
+                <a [routerLink]="['/post-job']">Post Job</a>
+            </li>
+        </ul>
+    </div>
+    <div *ngIf="isAdmin==false">
+        <ul class="nav navbar-left top-nav" *ngIf="isLoggedIn">
+            <li>
+                <a [routerLink]="['/find-job']">Find Jobs</a>
+            </li>
+            <li>
+                <a [routerLink]="['/applied-job']">Applied Jobs</a>
+            </li>
+        </ul>
+    </div>
+
+    <ul class="nav navbar-right top-nav" *ngIf="isLoggedIn">
+        <li class="nav navbar-left top-nav" *ngIf="isAdmin==false">
+            <a (click)="admin()" [routerLink]="['/institution']">Employer</a>
+        </li>
+        <li class="nav navbar-left top-nav" *ngIf="isAdmin==true">
+            <a (click)="users()" [routerLink]="['/dashboard']">Job Seeker</a>
+        </li>
+        <li>
+            <a [routerLink]="['/show-profile']" class="credentials">{{ user.firstName }} {{ user.lastName }}</a>
+        </li>
+        <li>
+            <a (click)="logout()" href="/signin"><i class="fa fa-sign-out logout"></i></a>
+        </li>
+    </ul>
+</div>
+
+<div *ngIf="checkRole">
+    <a class="navbar-brand title" [routerLink]="['admin/home']" *ngIf="isLoggedIn"><i class="fa fa-gg logo"></i></a>
+    <div class="navbar-brand title pull-right">
+        <a (click)="logout()" href="/signin">
+            <i class="fa fa-sign-out logout"></i>
+        </a>
+    </div>
+    <ul class="nav navbar-left top-nav" *ngIf="isLoggedIn">
+        <li>
+            <a [routerLink]="['admin/jobs']">Jobs</a>
+        </li>
+        <li>
+            <a [routerLink]="['admin/institutions']">Institutions</a>
+        </li>
+    </ul>
+</div>
+
+<ul class="nav navbar-right top-nav" *ngIf="!isLoggedIn">
+    <li>
+        <a [routerLink]="['signin']">Login</a>
+    </li>
+    <li>
+        <a [routerLink]="['signup']">Register</a>
+    </li>
+</ul>

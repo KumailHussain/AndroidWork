@@ -1,0 +1,138 @@
+.border {
+    border-bottom: 2px solid blue;
+    padding-bottom: 14px
+}
+
+.heading-custom{
+	padding-top: 20px;
+	text-align:left;
+}
+
+.institution-fields{
+	padding: 15px;
+}
+h3{
+	font-color: #337ab7;
+}
+
+.panel-custom{
+	border-radius: 4px;
+	border-width: 2px;
+}
+.panel-danger-custom{
+	border-radius: 0px;
+	border-width: 2px;
+	background-color: red;
+	border-color: red;
+	color:white;
+}
+.panel-footer-custom{
+    color:#737171;
+    font-family: Arial;
+    font-color:black;
+    font-weight: bold;
+    padding-left: 5px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom:10px;
+}
+.job-details{
+    color: #979696;
+    font-size: 12px;
+    padding-top: 10px;
+}
+
+.heading-job{
+    color:blue;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.job-company{
+    color:#777675;
+    font-size: 16px;
+    font-weight: bold;
+    padding-top: 5px;
+}
+
+
+small{
+	color: #897B88;
+}
+
+button{
+	border-radius: 4px;
+
+}
+
+h1{
+	color:black;
+}
+
+.ins-details{
+	font-size: 20px;
+	padding-right: 10px;
+	color:#8a6d3b;
+}
+
+.des{
+	color:#314d8f;
+	margin-top: 20px
+}
+
+.button-p{
+    background-color: #008BFF;
+    border-color: #008BFF;
+}
+
+.button-s{
+    border-color: #3fb618;
+    background-color: #3fb618;
+}
+
+.button-p:hover{
+  color: #fff;
+  background-color: #31708f;
+  border-color: #31708f;
+}
+
+.button-s:hover{
+  color: #fff;
+  background-color: #2a672b;
+  border-color: #2a672b;
+
+}
+
+.button-d{
+    border-color: #fb0000;
+    background-color: #fb0000;
+    margin-right: 15px;
+    margin-top: 5px;
+}
+
+.button-d:hover{
+  color: #fff;
+  background-color: #b10101;
+  border-color: #b10101;
+
+}
+
+.job{
+    color:blue;
+}
+
+.alert{
+    color: #2c364c;
+}
+
+.custom-color{
+    color: #2c363b;
+}
+
+.custom-color-highlight{
+    color: #3fb618;
+    }
+
+.custom-color-info{
+    color: #b10101;
+}

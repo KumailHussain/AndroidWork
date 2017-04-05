@@ -1,0 +1,76 @@
+
+.body-custom{
+    margin-top:75px;
+}
+
+.profile-panel{
+    background-color: #C8FFB0
+}
+
+.navbar-inverse {
+    background-color: black;
+    border-color: black;
+}
+.label-custom{
+    margin:20px;
+    size:20px;
+}
+
+.skill-panel-custom{
+    padding: 8px;
+    background-color: #222939;
+    border-color: #222939;
+    color:white;
+    text-align: center;
+    font-size:16px;
+}
+
+.exp-panel-custom{
+    color:black;
+    text-align: left;
+    font-size:14px;
+    margin-left: 20px;
+}
+.btn-primary{
+    height: 37px;
+    text-align: center;
+    background-color: #323299;
+
+}
+.img-thumbnail{
+    height: 37px;
+    width: 120px;
+    background-color: transparent;
+    border-color: #2c364c;
+
+}
+.avatar{
+    width: 100%;
+}
+
+.border-custom{
+    border-radius: 4px;
+}
+
+.button-p{
+    background-color: #008BFF;
+    border-color: #008BFF;
+}
+
+.button-s{
+    border-color: #3fb618;
+    background-color: #3fb618;
+}
+
+.button-p:hover{
+  color: #fff;
+  background-color: #31708f;
+  border-color: #31708f;
+}
+
+.button-s:hover{
+  color: #fff;
+  background-color: #2a672b;
+  border-color: #2a672b;
+
+}

@@ -1,0 +1,44 @@
+<a class="anchor" [routerLink]="['/admin/jobs']">Go back</a>
+<h1>Update Posted Job</h1>
+
+<app-async [waitFor]="hasFetched">
+    <button *ngIf="jobApproved==false" (click)="updateStatus()" name="jobTitle" class="space btn btn-success pull-right">Approve Job</button>
+    <h3 *ngIf="jobApproved==true"  class="space pull-right"><i class="pull-right fa fa-check-circle"></i><strong>Job Is Approved</strong></h3>
+
+    <form #f="ngForm" (ngSubmit)="update(f.value)" *ngIf="hasFetched">
+        <div class="form-group">
+        <label>Title</label>
+      <input type="text" name="jobTitle" class="form-control" [(ngModel)]="job.jobTitle">
+    </div>
+     <div class="form-group">
+        <label>Description</label>
+      <textarea type="text" name="jobDescription" rows="5" class="form-control" [(ngModel)]="job.jobDescription"></textarea>
+    </div>
+    <div class="form-group">
+        <label>Email Address</label>
+      <input type="email" name="emailAddress" class="form-control" [(ngModel)]="job.emailAddress">
+    </div>
+    <div class="form-group">
+        <label>Institution</label>
+      <input type="text" name="institutionName" class="form-control" [(ngModel)]="job.institutionName">
+    </div>
+    <div class="form-group">
+        <label>Type</label>
+      <input type="text" name="jobType" class="form-control" [(ngModel)]="job.jobType">
+    </div>
+     <div class="form-group">
+        <label>Career Level</label>
+      <input type="text" name="careerLevel" class="form-control" [(ngModel)]="job.careerLevel">
+    </div>
+     <div class="form-group">
+        <label>Experience</label>
+      <textarea type="text" name="jobExperience" rows="5" class="form-control" [(ngModel)]="job.jobExperience"></textarea>
+    </div>
+    <div class="form-group">
+        <label>Location</label>
+      <input type="text" name="jobLocation" class="form-control" [(ngModel)]="job.jobLocation">
+    </div>
+    <button type="submit" class="btn btn-primary">Update</button>
+    <span [hidden]="!hasUpdated">Job updated successfully.</span>
+  </form>
+</app-async>

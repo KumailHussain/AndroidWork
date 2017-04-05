@@ -1,0 +1,35 @@
+body {
+    
+    margin-top: 100px;
+    background-color: #222;
+}
+@media(min-width:768px) {
+    body {
+        margin-top: 60px;
+    }
+}
+.app {
+    padding-left: 0;
+}
+.page-wrapper {
+    width: 100%;
+    padding: 0;
+    background-color: #fff;
+}
+@media(min-width:768px) {
+  .page-wrapper {
+      padding-top:  10px;
+      padding-left:50px;
+      padding-right:50px;
+ }
+}
+
+.custom{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.navbar {
+    background-color: #F8F8F8;
+    border-color: #E7E7E7;
+}

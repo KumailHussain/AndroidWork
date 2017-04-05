@@ -1,0 +1,72 @@
+<div class="container" style="padding-top: 20px;">
+    <h1 class="page-header">Edit Institution</h1>
+    <div *ngIf="notification">
+        <div class="alert alert-success">
+            Changes Saved.
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8 col-sm-6 col-xs-12 personal-info">
+            <form class="form-horizontal" (ngSubmit)="submitPost()" role="form">
+                <div class="form-group">
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label border-custom">Institution Name:</label>
+                        <div class="col-lg-8">
+                            <input name="institutionName" readonly class="form-control border-custom" value={{institutionInfo.institutionName}} [(ngModel)]="updatedInfo.institutionName" type="text">
+                        </div>
+                    </div>
+                    <label class="col-lg-3 control-label">Location</label>
+                    <div class="col-lg-8">
+                        <select  name="location" value={{institutionInfo.cityName}} [(ngModel)]="updatedInfo.cityName" id="location" class="select-custom border-custom">
+                            <option disabled="true" selected="true" [value]="none">Select City</option>
+                            <option value="Bangalore">Bangalore</option>
+                            <option value="Chennai">Chennai</option>
+
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">Institution Address:</label>
+                    <div class="col-lg-8">
+                        <input class="form-control border-custom" name="lastName" value={{institutionInfo.institutionAddress}} [(ngModel)]="updatedInfo.institutionAddress"  type="text">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">Industry URL</label>
+                    <div class="col-lg-8">
+                        <input class="form-control border-custom" name="firstName" value={{institutionInfo.institutionUrl}} [(ngModel)]="updatedInfo.institutionUrl" type="text">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">Industry Type</label>
+                    <div class="col-lg-8">
+                        <select  required name="industryType" id="industryType" value={{institutionInfo.industryType}} [(ngModel)]="updatedInfo.industryType" aria-describedby="sizing-addon1" class="select-custom">
+                            <option disabled selected [value]="null">Select Industry</option>
+                            <option value="IT">IT</option>
+                            <option value="Business">Business</option>
+                            <option value="Engineering">Engineering</option>
+                            <option value="Teaching">Teaching</option>
+                            <option value="Marketing">Marketing</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Description:</label>
+                    <div class="col-md-8">
+                        <textarea rows="8" class="form-control border-custom"  name="description" value={{institutionInfo.institutionDescription}} [(ngModel)]="updatedInfo.institutionDescription" id="description"></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label"></label>
+                    <div class="col-md-8">
+                        <button class="btn btn-primary border-custom button-p"  type="submit">Save Changes</button>
+                        <span></span>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

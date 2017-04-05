@@ -1,0 +1,9 @@
+.heading {
+    border-bottom: 1px solid cadetblue;
+}
+
+.anchor {
+    color: deepskyblue;
+    font-size: 14px;
+    text-decoration: underline;
+}

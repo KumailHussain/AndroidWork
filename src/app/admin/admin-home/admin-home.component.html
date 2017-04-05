@@ -1,0 +1,33 @@
+<section>
+<div class="wrapper">
+    <div class="tile">
+        <span class="heading">
+            Jobs
+        </span>
+        <span class="count" *ngIf="hasFetchedStats">
+           {{ stats.jobs }} 
+        </span>
+        <span class="details" [routerLink]="['/admin/jobs']">
+           View All Jobs 
+        </span>
+    </div>
+    <div class="tile">
+        <span class="heading">
+            Institutions
+        </span>
+        <span class="count"  *ngIf="hasFetchedStats">
+           {{ stats.institutions }}
+        </span>
+        <span class="details" [routerLink]="['/admin/institutions']">
+           View All Institutions 
+        </span>
+    </div>
+</div>
+<hr/>
+<div>
+    <h1>Registered Users Information</h1>
+    <app-async [waitFor]="hasFetched">
+        <app-table [data]="users" (onEdit)="navigate($event)" (onRemove)="remove($event)"></app-table>
+    </app-async>
+</div>
+</section>

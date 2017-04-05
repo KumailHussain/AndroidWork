@@ -1,0 +1,164 @@
+<div class="container">
+    <h1 class="title heading-custom">Post Job</h1>
+    <div *ngIf="validInstitution==true">
+        <div *ngIf="status==false">
+            <hr>
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <div class="main-login main-center">
+                    <form class="form-horizontal" (ngSubmit)="submitPost()" action="#">
+                        <div class="form-group">
+                            <label for="title" class="cols-sm-2 control-label"> Job Title</label>
+                            <div class="cols-sm-10">
+                                <div class="input-group">
+                                    <input required type="text" [(ngModel)]="postjob.jobTitle" name="title" class="form-control" id="title" placeholder="Enter Job Title" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="description" class="cols-sm-2 control-label">Job Description</label>
+                            <div class="cols-sm-10">
+                                <div class="input-group">
+                                    <textarea required rows="8" class="form-control" [(ngModel)]="postjob.jobDescription" name="description" id="description"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="type" class="cols-sm-2 control-label">Job Type</label>
+                                    <div class="cols-sm-10">
+                                        <div class="input-group">
+                                            <select required [(ngModel)]="postjob.jobType" name="type" id="type" class="select-custom">
+                                                <option disabled="true" selected="true" [value]="volvo">Select Industry</option>
+                                                <option value="IT">IT</option>
+                                                <option value="Business">Business</option>
+                                                <option value="Engineering">Engineering</option>
+                                                <option value="Teaching">Teaching</option>
+                                                <option value="Marketing">Marketing</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+                                <div class="form-group">
+                                    <label for="career" class="cols-sm-2 control-label">Career Level</label>
+                                    <div class="cols-sm-10">
+                                        <div class="input-group">
+                                            <select required [(ngModel)]="postjob.careerLevel" name="career" id="career" class="select-custom">
+                                                <option disabled="true" selected="true" [value]="volvo">Select Career Level</option>
+                                                <option value="Entry">Entry Level</option>
+                                                <option value="Experienced">Experienced</option>
+                                                <option value="Manager">Manager</option>
+                                                <option value="Student">Student</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2"></div>
+                            <div class="col-md-5">
+                                <div class="form-group">
+                                    <label for="expereince" class="cols-sm-2 control-label">Experience Level</label>
+                                    <div class="cols-sm-10">
+                                        <div class="input-group">
+                                            <select required [(ngModel)]="postjob.jobExperience" name="expereince" id="expereince" class="select-custom">
+                                                <option disabled="true" selected="true" [value]="volvo">Select Experience</option>
+                                                <option value="Fresh Graduate">Fresh Graduate</option>
+                                                <option value="1 Year">1 Year</option>
+                                                <option value="2 Years">2 Years</option>
+                                                <option value="3 Years">3 Years</option>
+                                                <option value="4 Years">4 Years</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+                                <div class="form-group">
+                                    <label for="location" class="cols-sm-2 control-label">Location</label>
+                                    <div class="cols-sm-10">
+                                        <div class="input-group">
+                                            <select required [(ngModel)]="postjob.jobLocation" name="location" id="location" class="select-custom">
+                                                <option disabled="true" selected="true" [value]="volvo"> Select City </option>
+                                                <option value="Bangalore">Bangalore</option>
+                                                <option value="Chennai">Chennai</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2"></div>
+                            <div class="col-md-5">
+                                <div class="form-group">
+                                    <label for="location" class="cols-sm-2 control-label">Place</label>
+                                    <div class="cols-sm-10">
+                                        <div class="input-group">
+                                            <select required [(ngModel)]="postjob.jobPlace" name="location" id="place" class="select-custom">
+                                                <option disabled="true" selected="true" [value]="volvo"> Select Place </option>
+                                                <option value="KR Puram">KR Puram</option>
+                                                <option value="Electronic City">Electronic City</option>
+                                                <option value="Rajaji Nagar">Rajaji Nagar</option>
+                                                <option value="Hebbal">Hebbal</option>
+                                                <option value="JP Nagar">JP Nagar</option>
+                                                <option value="Jaya Nagar">Jaya Nagar</option>
+                                                <option value="Egmore">Egmore</option>
+                                                <option value="Thambaram">Thambaram</option>
+                                                <option value="Mylapore">Mylapore</option>
+                                                <option value="Kodambakkam">Kodambakkamr</option>
+                                                <option value="Anna Nagar">Anna Nagar</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <label for="skills" class="cols-sm-2 control-label">Job Skills</label>
+                            <div class="cols-sm-10">
+                                <div class="input-group">
+                                    <input required type="text" [(ngModel)]="postjob.jobSkills" class="form-control" name="skills" id="skills" placeholder="Enter job Skills" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="qualification" class="cols-sm-2 control-label">Qualification</label>
+                            <div class="cols-sm-10">
+                                <div class="input-group">
+                                    <input type="text" required [(ngModel)]="postjob.jobQualifications" class="form-control" name="qualification" id="qualification" placeholder="Enter job Qualification" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="deadline" class="cols-sm-2 control-label">Deadline</label>
+                            <div class="cols-sm-10">
+                                <div class="input-group">
+                                    <input type="date" required [(ngModel)]="postjob.deadline" name="deadline" id="deadline" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group ">
+                            <button type="submit" class="btn btn-primary  login-button button-p">Post Job</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="validInstitution==false">
+        <div class="alert alert-warning">
+            <span class="-warning">Can't Post Job ,No institution Exist!!
+                click here to <a [routerLink]="['/add-institution']">Add Institution</a>
+            </span>
+        </div>
+    </div>
+    <div *ngIf="status==true">
+        <div class="alert alert-success">
+            <i class="fa fa-check"><span class="success">Job Posted
+                click here to view Posted Job <a [routerLink]="['/institution']">View Posted Job</a>
+                </span></i>
+        </div>
+    </div>
+</div>

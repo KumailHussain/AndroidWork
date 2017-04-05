@@ -1,0 +1,87 @@
+<div class="container" style="padding-top: 20px;">
+
+    <h1 class="page-header">Edit Profile</h1>
+    <div *ngIf="notification">
+        <div class="alert alert-success">
+            Changes Saved.
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-4 col-sm-6 col-xs-12">
+            <div class="text-center">
+                <img src={{imageUrl}} class="avatar img-thumbnail" style="width:210px;height:210px" alt="avatar">
+                <h6>Upload a different photo...</h6>
+                <input
+                        #file
+                        [ng-file-select]="options" style="display: none;"   accept="image/*"
+                        (onUpload)="handleUpload($event)" type="file" class="text-center center-block well well-sm">
+                <button class="btn btn-success" (click)="file.click()">Upload Image</button>
+            </div>
+        </div>
+
+        <div class="col-md-8 col-sm-6 col-xs-12 personal-info">
+            <h3>Personal info</h3>
+            <form class="form-horizontal" (ngSubmit)="submitPost()" role="form">
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">Email:</label>
+                    <div class="col-lg-8">
+                        <input class="form-control border-custom" value={{profileInfo.emailAddress}} type="text" readonly>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">First name</label>
+                    <div class="col-lg-8">
+                        <input class="form-control border-custom" name="firstName" value={{profileInfo.firstName}} [(ngModel)]="updatedInfo.firstName" type="text">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">Last name:</label>
+                    <div class="col-lg-8">
+                        <input class="form-control border-custom" name="lastName" value={{profileInfo.lastName}} [(ngModel)]="updatedInfo.lastName" type="text">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">Date of Birth:</label>
+                    <div class="col-lg-8">
+                        <input type="date" class="form-control border-custom" name ="dateOfBirth" value={{profileInfo.dateOfBirth}} [(ngModel)]="updatedInfo.dateOfBirth" type="text">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Gender:</label>
+                    <div class="col-md-8">
+                        <select   [(ngModel)]="updatedInfo.gender" value={{profileInfo.gender}} name="gender">
+                            <option disabled selected value="null"> Select Gender</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Location:</label>
+                    <div class="col-md-8">
+                        <select  [(ngModel)]="updatedInfo.location" value={{profileInfo.location}} name="cityName" class="select-custom" required>
+                            <option disabled selected value="empty">--Select City--</option>
+                            <option value="Bangalore">Bangalore</option>
+                            <option value="Chennai">Chennai</option>
+                        </select> </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Phone:</label>
+                    <div class="col-md-8">
+                        <input class="form-control border-custom" name="phoneNumber" value={{profileInfo.phoneNumber}} [(ngModel)]="updatedInfo.phoneNumber" type="text">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label"></label>
+                    <div class="col-md-8">
+                        <button class="btn btn-primary border-custom"  type="submit">Save Changes</button>
+                        <span></span>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

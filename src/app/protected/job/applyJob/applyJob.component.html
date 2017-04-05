@@ -1,0 +1,54 @@
+
+<div class="container body-custom" >
+    <div *ngIf="successAlert==false">
+      <div *ngIf="message=='Can apply to this job'">
+        <form class="form-horizontal" (ngSubmit)="submitPost()" action="#" >
+
+            <div class="row main">
+                <div class="col-md-9">
+                    <div class="panel panel-default panel-custom">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-9 text-left">
+                                    <div title="Title" class="heading-job"  name="title" >{{getvalue.jobTitle}}</div>
+                                    <div class="panel-footer-custom">
+                                        <span class="glyphicon glyphicon-calendar " aria-hidden="true"> </span>
+                                        <span title="Deadline" class = "panel-footer-custom" >{{getvalue.deadline | date: 'dd/MM/yyyy'}}</span>
+                                        <span class="glyphicon glyphicon-stats" aria-hidden="true"> </span>
+                                        <span title="Experience" class = "panel-footer-custom" >{{getvalue.jobExperience}}</span>
+                                        <span class="glyphicon glyphicon-map-marker" aria-hidden="true"> </span>
+                                        <span title="Location" class = "panel-footer-custom" >{{getvalue.jobLocation}}</span>
+                                    </div>
+
+                                    <div class="form-group" style="margin-left:0px">
+                                        <label for="description">How are you suitable for this Job?</label>
+                                        <textarea  required rows="8"class="form-control" cols="50" name="description"  [(ngModel)]="getvalue.description" id="Description" ></textarea>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary button-p">Submit</button>
+                                    <div class="job-details-heading">Job Description</div>
+                                    <div class="job-details">{{getvalue.jobDescription}}</div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+      <div *ngIf="message=='Already Applied to this job'">
+        <div class="alert alert-success">
+          <i class="fa fa-check"><span class="success">Already Applied to this job
+                click here to go on <a [routerLink]="['/dashboard']">Dashboard</a>
+                </span></i>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="successAlert==true">
+        <div class="alert alert-success">
+            <i class="fa fa-check"><span class="success">Successfully Applied for the job
+                click here to view it <a [routerLink]="['/applied-job']">View Applied Job</a>
+                </span></i>
+        </div>
+    </div>
+</div>

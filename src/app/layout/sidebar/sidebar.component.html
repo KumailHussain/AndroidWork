@@ -1,0 +1,27 @@
+ <div class="collapse navbar-collapse navbar-ex1-collapse">
+
+    <ul class="nav navbar-nav side-nav" style="background-color: #000">
+        <li class="active">
+            <a [routerLink]="['']">Dashboard</a>
+        </li>
+
+        <!-- These commented ones are for normal user -->
+        <li>
+            <a [routerLink]="['/find-job']">Find Jobs</a>
+        </li>
+        <li>
+            <a [routerLink]="['/applied-job']">Applied Jobs</a>
+        </li>
+
+
+
+        <!-- Below 2 ARE for employer or admin -->
+        <li>
+            <a [routerLink]="['/institution']">Institutions</a>
+        </li>
+
+        <li>
+            <a [routerLink]="['/post-job']">Post Job</a>
+        </li>
+    </ul>
+</div>

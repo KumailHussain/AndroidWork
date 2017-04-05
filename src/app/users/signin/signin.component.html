@@ -1,0 +1,26 @@
+<div class="form">  
+          <h1>Welcome Back!</h1>
+          <form #f="ngForm" (ngSubmit)="login(f.value)">
+            <div class="field-wrap">
+            <label [hidden]="user.emailAddress">
+              Email Address
+            </label>
+            <input type="email" required autocomplete="off"  name="emailAddress"  [(ngModel)]="user.emailAddress" />
+          </div>
+          
+          <div class="field-wrap">
+            <label [hidden]="user.password">
+              Password
+            </label>
+            <input type="password" required autocomplete="off" name="password" [(ngModel)]="user.password">/>
+          </div>
+           <span class="notification" *ngIf="notification">
+                <i class="fa fa-close"><span class="failure">Email or Password Incorrect </span></i>
+           </span>
+
+          <p class="sign-up"><a [routerLink]="['/signup']">Sign up</a></p>
+          
+          <button class="button button-block">Log In</button>
+          
+          </form>   
+</div>

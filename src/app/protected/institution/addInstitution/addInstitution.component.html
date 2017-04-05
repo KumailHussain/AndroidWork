@@ -1,0 +1,106 @@
+
+
+
+<div class="container">
+  <div *ngIf="addNotification==false">
+    <div *ngIf="validateInstitution==true">
+      <div class="row main" >
+        <h1 class="title heading-custom">Add Instituion</h1>
+        <hr>
+        <div class = "col-md-3"></div>
+        <div class="col-md-6">
+          <form class="form-horizontal" action="#" (ngSubmit)="onSubmit()">
+
+            <div class="form-group">
+              <label for="institutionName" class="cols-sm-2 control-label">Institution Name</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <input type="text" class="form-control" required autocomplete="off" name="institutionName" id="institutionName" [(ngModel)]="institution.institutionName" placeholder="Enter the name of your Institution"/>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="institutionAddress" class="cols-sm-2 control-label">Institution Address</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <input type="text" autocomplete="off" required class="form-control" name="email" id="institutionAddress" [(ngModel)]="institution.institutionAddress" placeholder="Enter Address of your Institution"/>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+            <div class="col-md-5 pull-left">
+              <div class="form-group">
+                <label class="cols-sm-2 control-label">Type of your Industry</label>
+                <div class="cols-sm-10">
+                  <div class="input-group">
+                    <select  required name="industryType" id="industryType" [(ngModel)]="institution.industryType" aria-describedby="sizing-addon1" class="select-custom">
+                      <option disabled="true" selected="true">Select Industry</option>
+                      <option value="IT">IT</option>
+                      <option value="Business">Business</option>
+                      <option value="Engineering">Engineering</option>
+                      <option value="Teaching">Teaching</option>
+                      <option value="Marketing">Marketing</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-2"></div>
+            <div class="col-md-5 pull-right">
+              <div class="form-group">
+                <label  class="cols-sm-2 control-label">City Name</label>
+                <div class="cols-sm-10">
+                  <div class="input-group">
+                    <select   [(ngModel)]="institution.cityName" name="location" class="select-custom" required>
+                      <option value="Bangalore">Bangalore</option>
+                      <option value="Chennai">Chennai</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+            <div *ngIf="customCityValidation">
+              <small class="well well-sm position"> <span class="fa fa-exclamation-circle"></span>Please select an Item in the list</small>
+            </div>
+            <div class="form-group">
+              <label for="institutionDescription" class="cols-sm-2 control-label">Institution Description</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <textarea required autocomplete="off" rows="8"class="form-control" cols="50" name="instituionDescription" id="institutionDescription" [(ngModel)]="institution.institutionDescription" ></textarea>                      </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="institutionUrl" class="cols-sm-2 control-label">Institution Url</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <input type="text" required autocomplete="off" class="form-control" name="institutionUrl" id="institutionUrl" [(ngModel)]="institution.institutionUrl" placeholder="Enter Url of your Institution"/>
+                </div>
+              </div>
+            </div>
+            <div class="form-group ">
+              <button type="submit" class="btn btn-primary login-button border-custom">Add Institution</button>
+            </div>
+          </form>
+          <span class="notification" *ngIf="addNotification==true">
+                  <i class="fa fa-check"><span class="success">Successfully registered.</span></i>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="validateInstitution==false">
+      <div class="alert alert-warning">
+        Instituion already exist click here to view Institution <a [routerLink]="['/institution']">View Institution</a>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="addNotification==true">
+    <div class="alert alert-success">
+      <i class="fa fa-check"><span class="success">Successfully Added
+                click here to view Institution <a [routerLink]="['/institution']">View Institution</a>
+                </span></i>
+    </div>
+  </div>
+</div>

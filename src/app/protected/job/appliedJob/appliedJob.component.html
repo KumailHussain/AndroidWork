@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="col-md-12">
+    <h1 class="title heading-custom">Applied Jobs</h1>
+    <hr>
+    <div *ngIf="appliedNotification==false">
+      <div class="row">
+        <div *ngFor="let job of jobData">
+          <div class="col-md-12" >
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <div class="row">
+                  <div class="col-xs-9 text-left" >
+                    <div title="Title" class="heading-job" >{{job.jobTitle}}</div>
+                    <div title="Description" class="job-details">{{job.jobDescription}}</div>
+                  </div>
+                </div>
+              </div>
+              <div class="panel-footer ">
+                <span class="glyphicon glyphicon-calendar " aria-hidden="true"> </span>
+                <span title="Deadline"class = "panel-footer-custom">{{job.deadline | date: 'dd/MM/yyyy'}}</span>
+                <span class="glyphicon glyphicon-stats" aria-hidden="true"> </span>
+                <span title="Experience" class = "panel-footer-custom">{{job.jobExperience}}</span>
+                <span class="glyphicon glyphicon-map-marker" aria-hidden="true"> </span>
+                <span title="Location" class = "panel-footer-custom">{{job.jobLocation}}</span>
+                <span class="pull-right"><b>Applied </b></span>
+                <div class="clearfix"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="appliedNotification==true">
+      <div class="col-md-9">
+        <div class="panel panel-danger panel-custom">
+          <div class="panel-heading text-center">
+            You have applied for no jobs.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

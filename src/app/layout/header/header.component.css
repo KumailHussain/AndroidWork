@@ -1,0 +1,47 @@
+.top-nav {
+  padding: 0 15px;
+}
+
+.logo {
+  cursor: pointer;
+  font-size: 24px;
+  margin: -3px;
+  color: azure;
+  vertical-align: super;
+}
+
+.top-nav>li {
+  display: inline-block;
+}
+
+.title {
+  color: white !important;
+}
+
+.top-nav>li>a {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  line-height: 20px;
+  color: #999;
+  cursor: pointer;
+}
+
+.logout {
+  color: white;
+  font-size: 16px;
+}
+
+.credentials {
+  color: white  !important;
+  font-weight: 550;
+  font-size: 15px;
+}
+
+.top-nav>li>a:hover,
+.top-nav>li>a:focus,
+.top-nav>.open>a,
+.top-nav>.open>a:hover,
+.top-nav>.open>a:focus {
+  color: #fff;
+  background-color: #2c364c;
+}

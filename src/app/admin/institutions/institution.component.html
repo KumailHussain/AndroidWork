@@ -1,0 +1,4 @@
+<h1>Registered Institutions</h1>
+ <app-async [waitFor]="hasFetched">
+        <app-table [data]="institutions" (onEdit)="navigate($event)" (onRemove)="remove($event)"></app-table>
+</app-async>
